@@ -1,0 +1,455 @@
+﻿@model IEnumerable<DondeEstudiar.Models.det_sede_carrera>
+
+@{
+    ViewBag.Title = "Home - Donde Estudiar";
+    Layout = "~/Views/Shared/_Layout_Web.cshtml";
+}
+<link href="~/Assets/css/jquery-ui.css" rel="stylesheet" />
+<link href="~/Assets/css/HomeDE.css" rel="stylesheet" />
+
+<style>
+    @@-webkit-keyframes spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    @@keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .load-page {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #e6840a;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 10s linear infinite; /* Safari */
+        animation: spin 1s linear infinite;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient( rgb(89, 90, 95), rgba(84, 81, 79, 0.8) ), url();
+    }
+
+    /* When the body has the loading class, we turn
+        the scrollbar off with overflow:hidden */
+    body.loading .modal {
+        overflow: hidden;
+    }
+
+    /* Anytime the body has the loading class, our
+        modal element will be visible */
+    body.loading .modal {
+        display: block;
+    }
+
+    .block-c {
+        display: block;
+    }
+
+    .none-c {
+        display: none;
+    }
+
+    .btn-link {
+        text-align: left;
+        color: black !important;
+        background: white !important;
+    }
+
+        .btn-link:hover {
+            color: white !important;
+            background: #527ac3 !important;
+        }
+</style>
+
+<div id="#CargaLoad" class="modal none-c">
+    <div class="container">
+        <div class="load-page responsive" style="
+            /* text-align: center; */
+            /* color: white; */
+            margin-top: 21rem;
+            margin-left: 30rem;
+        ">
+
+        </div>
+        <h1 style="
+            text-align: center;
+            color: white;
+            margin-top: 0rem;
+        ">
+            Estamos eligiendo las mejores opciones para ti...
+        </h1>
+    </div>
+</div>
+
+<!--Cuerpo-->
+<div class="search-in fo">
+    <div class="container c-mptop">
+        <div class="row">
+            <h3 class="titulo">Conoce, compara y elige</h3>
+        </div>
+    </div>
+    <form method="POST" action="@Url.Action("FiltroPreguntas","Home")">
+        <div class="container cont-b">
+            <div class="row">
+                <div class="col-md-4" style="margin-bottom: 25px;">
+                    <div class="md-form input-group" style="margin-bottom: 0;">
+                        <input type="text" name="carrera" class="form-control" id="carrera">
+                        <label id="carrera" class=""><strong>Carrera:</strong></label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="md-form input-group" style="margin-bottom: 0;">
+                        <input type="text" name="institucion" class="form-control" id="institucion">
+                        <label id="institucion"><strong>Institucion:</strong></label>
+
+                    </div>
+                    
+                </div>
+                <div class="col-md-4">
+                    <div class="md-form input-group" style="margin-bottom: 0;">
+                        <input type="text" name="ubicacion" class="form-control" id="ubicacion">
+                        <label id="ubicacion"><strong>Ubicación:</strong></label>
+
+                        <span class="input-group-btn">
+                            <button class="btn btn-success my-0" ID="filtroBtn" type="submit">Buscar</button>
+                        </span>
+                    </div>
+                   
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<!--CuerpoFin-->
+<div>
+    <section class="search-in">
+        <div class="text-center img-filtro-texto" id="hero-06">
+            <div class="col-lg-12">
+                <div class="form-row">
+                    <div class="col-lg-6 container" style="margin-bottom: 30px;">
+                        <div class="col-lg-12 col-xs-12 col-sm-12 col-md-12 texto-form">
+                            <div class="card-home-a">
+
+                                <img src="~/Assets/img/img-dondeestudiar/graduation2.png" style="width:20%;" />
+                                <p class="texto-home animated fadeInUp">
+                                    Escoger tu carrera y dónde estudiarla es
+                                    una decisión que afectará tu futuro.
+                                    Aquí econtraras la información que necesitas para tomarla.
+                                    !Decídete y ponte en carrera¡
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 container card-estrella" style="padding: 15px;">
+                        @* <h4 class="tit-mas animated bounceInRight">Carreras mas destacadas</h4>
+                            <!--Carousel Wrapper-->
+                            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+                                <!--Slides-->
+                                <div class="carousel-inner" role="listbox">
+                                    <!--First slide-->
+                                    <div class="carousel-item active"  style="margin-left: 50px;">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="card mb-2">
+                                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">Card title</h4>
+                                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                        <a class="btn btn-primary">Button</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="card mb-2">
+                                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">Card title</h4>
+                                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                        <a class="btn btn-primary">Button</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" style="margin-left: 50px;">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="card mb-2">
+                                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">Card title</h4>
+                                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                        <a class="btn btn-primary">Button</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="card mb-2">
+                                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">Card title</h4>
+                                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                        <a class="btn btn-primary">Button</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Controls-->
+                                    <div class="controls-top">
+                                        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+                                        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+                                    </div>
+                                    <!--/.Controls-->
+                                </div>
+                                <!--/.Slides-->
+
+                            </div>
+                            <!--/.Carousel Wrapper-->*@
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container my-3">
+
+        <div class="col-lg-12 col-xs-12 col-sm-12 col-md-12">
+            <div class="form-row">
+                <div class="col-lg-8">
+                    <h4 class="tit-mas animated bounceInRight">Carreras mas destacadas</h4>
+                    <div class="form-row">
+                        <div class="col-lg-12 col-xs-8 col-sm-8 col-md-8">
+                            <div class="row">
+
+
+                                @foreach (var item in Model.GroupBy(x => x.id_carrera).Select(grp => grp.First()))
+
+                                {
+                                    <div class="col-lg-6 col-md-6 mb-4">
+                                        <div class="card card-cascade card-ecommerce narrower">
+
+                                            <!--Card image-->
+                                            <div class="view overlay">
+                                                <img class="card-img-top" src="http://www.mcaproyectos.com/uploads/instituciones/@item.tb_sedes.tb_instituciones.logo" alt="">
+                                                <a>
+                                                    <div class="mask rgba-white-slight"></div>
+                                                </a>
+                                            </div>
+                                            <!--/.Card image-->
+                                            <!--Card content-->
+                                            <div class="card-body text-center">
+                                                <!--Category & Title-->
+                                                <h5>@item.tb_carreras.nom_carrera</h5>
+                                                <h4 class="card-title"><strong><a href="">@item.tb_sedes.tb_instituciones.nom_institucion</a></strong></h4>
+
+                                                <!--Description-->
+                                                <p class="card-text" title="Ubicacion/Distrito">
+                                                    <a title="Ubicacion/Distrito" class="px-2 fa-lg li-ic"><i class="fas fa-map-marker-alt"></i></a>
+                                                    @item.tb_sedes.tb_ubigueos.desc_dep , @item.tb_sedes.tb_ubigueos.desc_dist
+                                                </p>
+
+
+
+
+
+                                                <!--Card footer-->
+                                                <div class="card-footer">
+                                                    <span class="float-left">15 <a class="" data-toggle="tooltip" data-placement="top" title="Quick Look"><i class="fa fa-eye mr-3"></i></a></span>
+                                                    <span class="float-right">
+                                                        10
+                                                        <a class="" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                            <!--/.Card content-->
+
+                                        </div>
+                                        <!-- Card Wider -->
+
+
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                        <div class="pagination-cs">
+                            <ul class="pagination pg-blue">
+                                <!--Arrow left-->
+                                <li class="page-item">
+                                    <a class="page-link" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                </li>
+
+                                <!--Numbers-->
+                                <li class="page-item active"><a class="page-link">1</a></li>
+                                <li class="page-item"><a class="page-link">2</a></li>
+                                <li class="page-item"><a class="page-link">3</a></li>
+                                <li class="page-item"><a class="page-link">4</a></li>
+                                <li class="page-item"><a class="page-link">5</a></li>
+
+                                <!--Arrow right-->
+                                <li class="page-item">
+                                    <a class="page-link" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-4 col-sm-4 col-md-4">
+                    <!--Accordion wrapper-->
+                    <div class="accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+                        <!-- Accordion card -->
+                        <div class="card">
+
+                            <!-- Card header -->
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <h5 class="mb-0">
+                                        Filtro Avanzado <i class="fa fa-angle-down rotate-icon"></i>
+                                    </h5>
+                                </a>
+                            </div>
+
+                            <!-- Card body -->
+                            <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordionEx">
+                                <div class="card-body">
+                                    <div class="form-check mb-2 mr-sm-2">
+                                        <input class="form-check-input" type="checkbox" id="inlineFormCheckMD">
+                                        <label class="form-check-label" for="inlineFormCheckMD">
+                                            Remember me
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-2 mr-sm-2">
+                                        <input class="form-check-input" type="checkbox" id="inlineFormCheckMD1">
+                                        <label class="form-check-label" for="inlineFormCheckMD1">
+                                            Remember me
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Accordion card -->
+
+                    </div>
+                    <!--/.Accordion wrapper-->
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-12 col-xs-12 col-sm-12 col-md-12">
+
+        </div>
+    </div>
+
+</div>
+
+<script src="~/Assets/js/jquery-3.2.1.min.js"></script>
+<script src="~/Assets/js/jquery-ui.js"></script>
+
+<script>
+    /*AutoComplete Ajax,Jquery*/ /*Carrera*/
+    $("#carrera").autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: '@Url.Action("GetCarrera", "Autocomplete")',
+                dataType: "json",
+                data: { search: $("#carrera").val() },
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return { label: item.nom_carrera, value: item.nom_carrera };
+                    }));
+                },
+                error: function (xhr, status, error) {
+                    alert("Error");
+                }
+            });
+        }
+    });
+
+     /*AutoComplete Ajax,Jquery*/ /*institucion*/
+    $("#institucion").autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: '@Url.Action("getInstitucion", "Autocomplete")',
+                dataType: "json",
+                data: { search: $("#institucion").val() },
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return { label: item.nom_institucion, value: item.nom_institucion };
+                    }));
+                },
+                error: function (xhr, status, error) {
+                    alert("Error");
+                }
+            });
+        }
+    });
+
+        /*AutoComplete Ajax,Jquery*/ /*ubicacion*/
+    $("#ubicacion").autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: '@Url.Action("GetUbigeo", "Autocomplete")',
+                dataType: "json",
+                data: { search: $("#ubicacion").val() },
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return { label: item.desc_dep, value: item.desc_dep };
+                    }));
+                },
+                error: function (xhr, status, error) {
+                    alert("Error");
+                }
+            });
+        }
+    });
+</script>
+
+
+<script>
+    /*Cuando se envia los filtros Carga la Pagina*/
+    setTimeout(function () {
+        $("#filtroBtn").click(function () {
+            $(".modal").fadeToggle(5000, function () {
+
+                $(".modal").removeClass("none-c");
+                $(".modal").addClass("block-c");
+
+            });
+        });
+
+    }, 5000);
+
+</script>

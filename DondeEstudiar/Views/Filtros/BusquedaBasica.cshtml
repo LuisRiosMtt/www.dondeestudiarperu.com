@@ -1,0 +1,142 @@
+﻿
+@{
+    ViewBag.Title = "BusquedaBasica";
+}
+<style>
+    label {
+        font-weight: normal !important;
+        color: color: #00000082 !important;
+    }
+</style>
+<link href="~/Assets/css/jquery-ui.css" rel="stylesheet" />
+<form method="post" id="BusQbasica">
+    <div class="col-lg-12" style="margin-bottom: 20px;">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="md-form input-group" style="margin-bottom: 0;">
+                    <input type="text" name="carrera" class="form-control" id="carrerafb">
+                    <label>Carrera</label>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="md-form input-group" style="margin-bottom: 0;">
+                    <input type="text" name="institucion" class="form-control" id="institucionfb">
+                    <label>Institucion</label>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="md-form input-group" style="margin-bottom: 0;">
+                    <input type="text" name="ubicacion" class="form-control" id="ubicacionfb">
+                    <label>Ubicacion</label>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 33px;">
+
+            <div class="col-lg-6">
+                <button type="button" id="submit" class="btn btn-success btn-block">
+                    Buscar
+                </button>
+            </div>
+            <div class="col-lg-6">
+                <input class="btn btn-warning btn-block" type="reset" value="Limpiar" />
+            </div>
+
+        </div>
+    </div>
+</form>
+<script src="~/Assets/js/jquery-3.2.1.min.js"></script>
+<script src="~/Assets/js/jquery-ui.js"></script>
+
+<script>
+    $('#submit').click(function () {       
+        var carrera = $("#carrerafb").val();
+        var institucion = $("#institucionfb").val();
+        var ubicacion = $("#ubicacionfb").val();
+
+        var data = {
+            carrera: carrera,
+            institucion: institucion,
+            ubicacion: ubicacion
+        }
+        console.log(data);
+        $.ajax({
+            type: 'POST',
+            url: '/Home/FiltroCards/',
+            data: JSON.stringify(data),
+            contentType: 'application/json',
+            success: function (data) {
+                console.log("success post");
+                $("#CargaCardsBusqueda").fadeIn(3000, function () {                   
+                    $(this).html(data);
+                });
+                $("#dataFiltroHome").fadeOut(1000, function () {
+                    $(this).css("display", "none");
+                });
+
+             },
+                     error: function () {
+                         alert("error post");
+             }
+        });
+    });
+</script>
+
+<script>
+    /*AutoComplete Ajax,Jquery*/ /*Carrera*/
+    $("#carrerafb").autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: '@Url.Action("GetCarrera", "Autocomplete")',
+                dataType: "json",
+                data: { search: $("#carrerafb").val() },
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return { label: item.nom_carrera, value: item.nom_carrera };
+                    }));
+                },
+                error: function (xhr, status, error) {
+                    alert("Error");
+                }
+            });
+        }
+    });
+
+     /*AutoComplete Ajax,Jquery*/ /*institucion*/
+    $("#institucionfb").autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: '@Url.Action("getInstitucion", "Autocomplete")',
+                dataType: "json",
+                data: { search: $("#institucionfb").val() },
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return { label: item.nom_institucion, value: item.nom_institucion };
+                    }));
+                },
+                error: function (xhr, status, error) {
+                    alert("Error");
+                }
+            });
+        }
+    });
+
+        /*AutoComplete Ajax,Jquery*/ /*ubicacion*/
+    $("#ubicacionfb").autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: '@Url.Action("GetUbigeo", "Autocomplete")',
+                dataType: "json",
+                data: { search: $("#ubicacionfb").val() },
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return { label: item.desc_dep, value: item.desc_dep };
+                    }));
+                },
+                error: function (xhr, status, error) {
+                    alert("Error");
+                }
+            });
+        }
+    });
+</script>

@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bd_dondeestudiarModelStoreContainer" CdmEntityContainer="bd_dondeestudiarEntities">
+    <EntitySetMapping Name="det_sede_carrera">
+      <EntityTypeMapping TypeName="bd_dondeestudiarModel.det_sede_carrera">
+        <MappingFragment StoreEntitySet="det_sede_carrera">
+          <ScalarProperty Name="id_carrera" ColumnName="id_carrera" />
+          <ScalarProperty Name="id_sede" ColumnName="id_sede" />
+          <ScalarProperty Name="acreditado" ColumnName="acreditado" />
+          <ScalarProperty Name="costo_anual" ColumnName="costo_anual" />
+          <ScalarProperty Name="rel_ingresantes_postulantes" ColumnName="rel_ingresantes_postulantes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_areas">
+      <EntityTypeMapping TypeName="bd_dondeestudiarModel.tb_areas">
+        <MappingFragment StoreEntitySet="tb_areas">
+          <ScalarProperty Name="id_area" ColumnName="id_area" />
+          <ScalarProperty Name="desc_area" ColumnName="desc_area" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fec_reg" ColumnName="fec_reg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_carreras">
+      <EntityTypeMapping TypeName="bd_dondeestudiarModel.tb_carreras">
+        <MappingFragment StoreEntitySet="tb_carreras">
+          <ScalarProperty Name="id_carrera" ColumnName="id_carrera" />
+          <ScalarProperty Name="nom_carrera" ColumnName="nom_carrera" />
+          <ScalarProperty Name="id_area" ColumnName="id_area" />
+          <ScalarProperty Name="tipo_carrera" ColumnName="tipo_carrera" />
+          <ScalarProperty Name="duracion" ColumnName="duracion" />
+          <ScalarProperty Name="popularidad" ColumnName="popularidad" />
+          <ScalarProperty Name="remuneracion_prom" ColumnName="remuneracion_prom" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fec_reg" ColumnName="fec_reg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_cursos">
+      <EntityTypeMapping TypeName="bd_dondeestudiarModel.tb_cursos">
+        <MappingFragment StoreEntitySet="tb_cursos">
+          <ScalarProperty Name="id_curso" ColumnName="id_curso" />
+          <ScalarProperty Name="nom_curso" ColumnName="nom_curso" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fec_reg" ColumnName="fec_reg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_generales">
+      <EntityTypeMapping TypeName="bd_dondeestudiarModel.tb_generales">
+        <MappingFragment StoreEntitySet="tb_generales">
+          <ScalarProperty Name="id_param" ColumnName="id_param" />
+          <ScalarProperty Name="id_grupo" ColumnName="id_grupo" />
+          <ScalarProperty Name="desc_param" ColumnName="desc_param" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fec_reg" ColumnName="fec_reg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_instituciones">
+      <EntityTypeMapping TypeName="bd_dondeestudiarModel.tb_instituciones">
+        <MappingFragment StoreEntitySet="tb_instituciones">
+          <ScalarProperty Name="id_institucion" ColumnName="id_institucion" />
+          <ScalarProperty Name="ruc" ColumnName="ruc" />
+          <ScalarProperty Name="nom_institucion" ColumnName="nom_institucion" />
+          <ScalarProperty Name="tipo_institucion" ColumnName="tipo_institucion" />
+          <ScalarProperty Name="tipo_gestion" ColumnName="tipo_gestion" />
+          <ScalarProperty Name="telf_institucion" ColumnName="telf_institucion" />
+          <ScalarProperty Name="dir_web" ColumnName="dir_web" />
+          <ScalarProperty Name="reputacion" ColumnName="reputacion" />
+          <ScalarProperty Name="residencial" ColumnName="residencial" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fec_reg" ColumnName="fec_reg" />
+          <ScalarProperty Name="admisiones_anual" ColumnName="admisiones_anual" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_perfil_profesional">
+      <EntityTypeMapping TypeName="bd_dondeestudiarModel.tb_perfil_profesional">
+        <MappingFragment StoreEntitySet="tb_perfil_profesional">
+          <ScalarProperty Name="id_carrera" ColumnName="id_carrera" />
+          <ScalarProperty Name="id_perfil" ColumnName="id_perfil" />
+          <ScalarProperty Name="desc_perfil" ColumnName="desc_perfil" />
+          <ScalarProperty Name="fec_reg" ColumnName="fec_reg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_roles">
+      <EntityTypeMapping TypeName="bd_dondeestudiarModel.tb_roles">
+        <MappingFragment StoreEntitySet="tb_roles">
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+          <ScalarProperty Name="nom_rol" ColumnName="nom_rol" />
+          <ScalarProperty Name="fec_reg" ColumnName="fec_reg" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_sedes">
+      <EntityTypeMapping TypeName="bd_dondeestudiarModel.tb_sedes">
+        <MappingFragment StoreEntitySet="tb_sedes">
+          <ScalarProperty Name="id_sede" ColumnName="id_sede" />
+          <ScalarProperty Name="id_institucion" ColumnName="id_institucion" />
+          <ScalarProperty Name="nom_sede" ColumnName="nom_sede" />
+          <ScalarProperty Name="cod_ubigueo" ColumnName="cod_ubigueo" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="telf" ColumnName="telf" />
+          <ScalarProperty Name="coordenada_x" ColumnName="coordenada_x" />
+          <ScalarProperty Name="coordenada_y" ColumnName="coordenada_y" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fec_reg" ColumnName="fec_reg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ubigueos">
+      <EntityTypeMapping TypeName="bd_dondeestudiarModel.tb_ubigueos">
+        <MappingFragment StoreEntitySet="tb_ubigueos">
+          <ScalarProperty Name="cod_ubigueo" ColumnName="cod_ubigueo" />
+          <ScalarProperty Name="cod_dep" ColumnName="cod_dep" />
+          <ScalarProperty Name="desc_dep" ColumnName="desc_dep" />
+          <ScalarProperty Name="cod_prov" ColumnName="cod_prov" />
+          <ScalarProperty Name="desc_prov" ColumnName="desc_prov" />
+          <ScalarProperty Name="cod_dist" ColumnName="cod_dist" />
+          <ScalarProperty Name="desc_dist" ColumnName="desc_dist" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_usuarios">
+      <EntityTypeMapping TypeName="bd_dondeestudiarModel.tb_usuarios">
+        <MappingFragment StoreEntitySet="tb_usuarios">
+          <ScalarProperty Name="dni_user" ColumnName="dni_user" />
+          <ScalarProperty Name="nom_user" ColumnName="nom_user" />
+          <ScalarProperty Name="ape_user" ColumnName="ape_user" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fec_reg" ColumnName="fec_reg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="tb_det_carrera_curso" TypeName="bd_dondeestudiarModel.tb_det_carrera_curso" StoreEntitySet="tb_det_carrera_curso">
+      <EndProperty Name="tb_carreras">
+        <ScalarProperty Name="id_carrera" ColumnName="id_carrera" />
+      </EndProperty>
+      <EndProperty Name="tb_cursos">
+        <ScalarProperty Name="id_curso" ColumnName="id_curso" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="sp_login" FunctionName="bd_dondeestudiarModel.Store.sp_login">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="bd_dondeestudiarModel.sp_login_Result">
+          <ScalarProperty Name="dni_user" ColumnName="dni_user" />
+          <ScalarProperty Name="nom_user" ColumnName="nom_user" />
+          <ScalarProperty Name="ape_user" ColumnName="ape_user" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fec_reg" ColumnName="fec_reg" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ubigeo" FunctionName="bd_dondeestudiarModel.Store.sp_ubigeo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="bd_dondeestudiarModel.sp_ubigeo_Result">
+          <ScalarProperty Name="cod_ubigueo" ColumnName="cod_ubigueo" />
+          <ScalarProperty Name="cod_dep" ColumnName="cod_dep" />
+          <ScalarProperty Name="desc_dep" ColumnName="desc_dep" />
+          <ScalarProperty Name="cod_prov" ColumnName="cod_prov" />
+          <ScalarProperty Name="desc_prov" ColumnName="desc_prov" />
+          <ScalarProperty Name="cod_dist" ColumnName="cod_dist" />
+          <ScalarProperty Name="desc_dist" ColumnName="desc_dist" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,130 @@
+﻿.cont-b {
+    margin-bottom: 10px;
+    margin-top: -1rem;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    border: 0;
+    /* border: 1px solid; */
+    background: white;
+}
+div#headingOne {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    border-left: 2px solid #329AF0;
+    padding: 17px;
+}
+
+.fo {
+    padding: 10px;
+    background: linear-gradient(-90deg, #2196f3, #00c851);
+    margin-top: 56px;
+}
+
+.titulo {
+    color: white;
+}
+
+.tit-mas {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    background: white;
+    border-left: 2px solid #329AF0;
+    padding: 0 10px;
+    margin: 0 0 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.card-title {
+    font-size: 21px !important;
+    color: black !important;
+}
+
+h4.card-title {
+    font-size: 15px !important;
+}
+
+a.px-2.fa-lg.li-ic {
+    color: #f78f21 !important;
+}
+
+.c-mptop {
+    margin-top: 10px;
+}
+.singpadding {
+    padding-left:0;
+    padding-right:0;
+
+}
+
+.bg-cards-cont {
+    padding: 20px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    border: 0;
+}
+.img-filtro-texto {
+    background-image: linear-gradient( rgba(6, 10, 27, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/img-dondeestudiar/fondo-home-tex2.jpg');
+    background-size: cover;
+    height: auto;
+    
+}
+
+.texto-home {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    color:white;
+    font-size: 14px;
+}
+.texto-form {
+    margin-top: 7rem;
+}
+.card-estrella {
+    display: block;
+    height: 60vh;
+    background: #ffffff4d;
+    margin-right: -10px;
+}
+.autocomplete-fill{
+    margin-top: 0px;
+    display: none;
+    height: 146px;
+    overflow-y: overlay;
+    /*border-bottom: 1px solid #c1c1c1;*/
+}
+
+.btn-carrera{
+    display:block
+}
+.btn-institucion{
+    display: block
+}
+.btn-ubicacion {
+    display: block
+}
+.card-home-a {
+    padding: 18px;
+    border-bottom: 7px solid #00c8531c;
+    border-right: 7px solid #ececec4f;
+    border-left: 7px solid #2097ef59;
+    border-top: 7px solid #e00a6230;
+}
+
+.chip.teal.lighten-2.white-text {
+    background-color: #fefefe !important;
+    color: #2196f3 !important;
+}
+
+.pagination-cs {
+    margin-left: 12rem;
+}
+
+/*Desarrollo en Moviles*/
+@media screen and (max-width:768px) {
+    .card-estrella {
+      display:none;
+    }
+    .texto-form {
+        margin-top: 2rem;
+    }
+    .pagination-cs {
+        margin-left: 3rem;
+    }
+}
+

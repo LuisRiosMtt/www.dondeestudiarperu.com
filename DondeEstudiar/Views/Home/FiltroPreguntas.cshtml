@@ -1,0 +1,456 @@
+﻿@model IEnumerable<DondeEstudiar.Models.det_sede_carrera>
+
+@{
+    ViewBag.Title = "Filtro - Donde Estudiar";
+    Layout = "~/Views/Shared/_Layout_Web.cshtml";
+}
+
+<link href="~/Assets/css/HomeDE.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<style>
+
+    .red {
+        color: red;
+        transition: all .5s ease-in-out;
+    }
+
+        .red:hover {
+            color: red;
+            transition: all .5s ease-in-out;
+        }
+
+    li.list-group-item {
+        padding: 1px;
+    }
+
+    label {
+        font-weight: bold;
+        color: black !important;
+    }
+
+
+
+    .none {
+        display: none !important;
+    }
+
+    .blok {
+        display: block;
+    }
+</style>
+<style>
+    @@-webkit-keyframes spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    @@keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .load-page {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #00c851;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 10s linear infinite; /* Safari */
+        animation: spin 1s linear infinite;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient( rgb(89, 90, 95), rgba(84, 81, 79, 0.8) ), url();
+    }
+
+    /* When the body has the loading class, we turn
+        the scrollbar off with overflow:hidden */
+    body.loading .modal {
+        overflow: hidden;
+    }
+
+    /* Anytime the body has the loading class, our
+        modal element will be visible */
+    body.loading .modal {
+        display: block;
+    }
+
+    .block-c {
+        display: block;
+    }
+
+    .none-c {
+        display: none;
+    }
+
+    .load {
+        margin-left: 13rem;
+    }
+
+    @@media screen and (max-width:768px) {
+        .load {
+            margin-left: 4rem;
+        }
+    }
+</style>
+
+<!--Cuerpo-->
+<!--CuerpoFin-->
+<div>
+    <section class="search-in">
+        <div class="text-center img-filtro-texto" id="hero-06">
+            <div class="col-lg-12">
+                <div class="form-row">
+                    <div class="col-lg-6 container" style="margin-bottom: 30px;">
+                        <div class="col-lg-12 col-xs-12 col-sm-12 col-md-12 texto-form">
+                            <div class="card-home-a">
+
+                                <img src="~/Assets/img/img-dondeestudiar/graduation2.png" style="width:20%;" />
+                                <p class="texto-home animated fadeInUp">
+
+                                    Si ya decidiste qué carrera estudiar, tienes que escoger dónde hacerlo. Aquí encontrarás información sobre las instituciones educativas que ofrecen las carreras de tu interés: el costo de las carreras, su duración, el ingreso promedio de sus egresados y más.
+
+                                    Además, puedes encontrar los datos de contacto de cada institución. Contáctate con ellas y conócelas mejor.
+                                    ¡Infórmate, compáralas y escoge la mejor opción para ti!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 container card-estrella" style="padding: 15px;">
+                        @* <h4 class="tit-mas animated bounceInRight">Carreras mas destacadas</h4>
+                            <!--Carousel Wrapper-->
+                            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+                                <!--Slides-->
+                                <div class="carousel-inner" role="listbox">
+                                    <!--First slide-->
+                                    <div class="carousel-item active"  style="margin-left: 50px;">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="card mb-2">
+                                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">Card title</h4>
+                                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                        <a class="btn btn-primary">Button</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="card mb-2">
+                                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">Card title</h4>
+                                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                        <a class="btn btn-primary">Button</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" style="margin-left: 50px;">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="card mb-2">
+                                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">Card title</h4>
+                                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                        <a class="btn btn-primary">Button</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="card mb-2">
+                                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">Card title</h4>
+                                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                        <a class="btn btn-primary">Button</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Controls-->
+                                    <div class="controls-top">
+                                        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+                                        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+                                    </div>
+                                    <!--/.Controls-->
+                                </div>
+                                <!--/.Slides-->
+
+                            </div>
+                            <!--/.Carousel Wrapper-->*@
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container my-3">
+
+        <div class="col-lg-12 col-xs-12 col-sm-12 col-md-12">
+            <div class="form-row">
+                <div class="col-lg-8">
+                    <h4 class="tit-mas animated bounceInRight">Orden de filtro:</h4>
+
+                    <div>
+                        <div class="chip teal lighten-2 white-text">
+                            @ViewBag.dtCarrera
+                            <i class="close fa fa-times"></i>
+                        </div>                    
+                        <div class="chip teal lighten-2 white-text">
+                                @ViewBag.dtInstitucion
+                                <i class="close fa fa-times"></i>
+                        </div>                     
+                        <div class="chip teal lighten-2 white-text">
+                            @ViewBag.dtUbicacion
+                            <i class="close fa fa-times"></i>
+                        </div>
+                    </div>
+                    <div style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);background: white;">
+                        <div style="padding-left: 0; padding-right: 0;" class="col-lg-12 none" id="CargaBusqueda">
+
+                        </div>
+                        <div class="col-lg-12 block" id="loadCarga" style="background:white;">
+                            <div class="container" style="padding:10px;">
+                                <div class="load-page responsive load">
+
+                                </div>
+                                <h6 style="color:#2196f3;font-size: 23px;text-align: center;">Cargando..</h6>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="col-lg-12" style="margin-bottom: 20px;padding-left: 10px;">
+                                <div class="form-group" style="text-align: left;">
+                                    <button style="margin-bottom: 10px;" type="button" class="btn btn-primary">
+                                        Comparar
+                                    </button>
+                                    <button id="btnIr" style="margin-bottom: 10px;" type="button" class="btn btn-link">
+                                        Ir a Búsqueda Personalizada
+                                    </button>
+                                    <button id="btnReg" style="margin-bottom: 10px;" type="button" class="btn btn-link none">
+                                        Regresar
+                                    </button>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <h4 class="tit-mas animated bounceInRight">Conoce,Compara y Elige</h4>
+                    <div class="form-row" id="dataFiltroHome">
+                        <div class="col-lg-12 col-xs-8 col-sm-8 col-md-8">
+                            <div class="row">
+                                @foreach (var item in Model)
+                                {
+                                    if (Model.Count() >= 1)
+                                    {
+                                        <div class="col-lg-6 col-md-6 mb-4">
+                                            <div class="card card-cascade card-ecommerce narrower">
+
+                                                <!--Card image-->
+                                                <div class="view overlay">
+                                                    <img class="card-img-top" src="http://www.mcaproyectos.com/uploads/instituciones/@item.tb_sedes.tb_instituciones.logo" alt="">
+                                                    <a>
+                                                        <div class="mask rgba-white-slight"></div>
+                                                    </a>
+                                                </div>
+                                                <!--/.Card image-->
+                                                <!--Card content-->
+                                                <div class="card-body text-center">
+                                                    <!--Category & Title-->
+                                                    <h5>@item.tb_carreras.nom_carrera</h5>
+                                                    <h4 class="card-title"><strong><a href="">@item.tb_sedes.tb_instituciones.nom_institucion</a></strong></h4>
+
+                                                    <!--Description-->
+                                                    <p class="card-text" title="Ubicacion/Distrito">
+                                                        <a title="Ubicacion/Distrito" class="px-2 fa-lg li-ic"><i class="fas fa-map-marker-alt"></i></a>
+                                                        @item.tb_sedes.tb_ubigueos.desc_dep , @item.tb_sedes.tb_ubigueos.desc_dist
+                                                    </p>
+
+
+
+
+
+                                                    <!--Card footer-->
+                                                    <div class="card-footer">
+                                                        <span class="float-left">15 <a class="" data-toggle="tooltip" data-placement="top" title="Quick Look"><i class="fa fa-eye mr-3"></i></a></span>
+                                                        <span class="float-right">
+                                                            10
+                                                            <a class="" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
+                                                        </span>
+                                                    </div>
+
+                                                </div>
+                                                <!--/.Card content-->
+
+                                            </div>
+                                            <!-- Card Wider -->
+
+
+                                        </div>
+                                    }
+
+                                }
+
+                            </div>
+                        </div>
+                        <div class="pagination-cs">
+                            <ul class="pagination pg-blue">
+                                <!--Arrow left-->
+                                <li class="page-item">
+                                    <a class="page-link" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                </li>
+
+                                <!--Numbers-->
+                                <li class="page-item active"><a class="page-link">1</a></li>
+                                <li class="page-item"><a class="page-link">2</a></li>
+                                <li class="page-item"><a class="page-link">3</a></li>
+                                <li class="page-item"><a class="page-link">4</a></li>
+                                <li class="page-item"><a class="page-link">5</a></li>
+
+                                <!--Arrow right-->
+                                <li class="page-item">
+                                    <a class="page-link" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="CargaCardsBusqueda">
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-4 col-sm-4 col-md-4">
+                    <!--Accordion wrapper-->
+                    <div class="accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+                        <!-- Accordion card -->
+                        <div class="card">
+
+                            <!-- Card header -->
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <h5 class="mb-0">
+                                        Filtro Basico <i class="fa fa-angle-down rotate-icon"></i>
+                                    </h5>
+                                </a>
+                            </div>
+
+                            <!-- Card body -->
+                            <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordionEx">
+                                <div class="card-body">
+                                    <div class="form-check mb-2 mr-sm-2">
+                                        <input class="form-check-input" type="checkbox" id="inlineFormCheckMD">
+                                        <label class="form-check-label" for="inlineFormCheckMD">
+                                            Lima
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-2 mr-sm-2">
+                                        <input class="form-check-input" type="checkbox" id="inlineFormCheckMD1">
+                                        <label class="form-check-label" for="inlineFormCheckMD1">
+                                            Otros departamentos
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Accordion card -->
+
+                    </div>
+                    <!--/.Accordion wrapper-->
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-12 col-xs-12 col-sm-12 col-md-12">
+
+        </div>
+    </div>
+
+</div>
+<script src="~/Assets/js/jquery-3.2.1.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $("#loadCarga").fadeOut(1000, function () {
+
+            $("#CargaBusqueda").removeClass("none");
+            $("#CargaBusqueda").addClass("block");
+            $("#loadCarga").removeClass("block");
+            $("#loadCarga").addClass("none");
+            $("#CargaBusqueda").load("/Filtros/BusquedaBasica");
+        });
+
+    });
+
+
+    $("#btnIr").click(function () {
+        $("#CargaBusqueda").removeClass("block");
+        $("#CargaBusqueda").addClass("none");
+        $("#loadCarga").removeClass("none");
+        $("#loadCarga").addClass("block");
+
+        $("#loadCarga").fadeToggle(2000, function () {
+            $("#btnIr").addClass("none");
+            $("#btnReg").removeClass("none");
+            $("#btnReg").addClass("block");
+            $("#CargaBusqueda").removeClass("none");
+            $("#CargaBusqueda").addClass("block");
+            $("#loadCarga").removeClass("block");
+            $("#loadCarga").addClass("none");
+            $("#CargaBusqueda").load("/Filtros/BusquedaPersonalidada");
+        });
+    });
+
+    $("#btnReg").click(function () {
+        $("#CargaBusqueda").removeClass("block");
+        $("#CargaBusqueda").addClass("none");
+        $("#loadCarga").removeClass("none");
+        $("#loadCarga").addClass("block");
+
+        $("#loadCarga").fadeToggle(2000, function () {
+            $("#btnReg").removeClass("none");
+            $("#btnReg").addClass("none");
+            $("#btnIr").addClass("none");
+            $("#btnIr").removeClass("none");
+            $("#CargaBusqueda").removeClass("none");
+            $("#CargaBusqueda").addClass("block");
+            $("#loadCarga").removeClass("block");
+            $("#loadCarga").addClass("none");
+            $("#CargaBusqueda").load("/Filtros/BusquedaBasica");
+        });
+    });
+
+
+</script>

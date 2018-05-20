@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Donde Estudiar - Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap Cards -->
+    <link href="~/Assets/css/cards.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="~/Assets/css/mdb.min.css" rel="stylesheet">
+    <!-- estilos -->
+    <link href="~/Assets/css/estilos.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="~/Assets/css/style.css" rel="stylesheet">
+</head>
+
+<body style="background-color:#e8e8e8;">
+    <!--Main Navigation-->
+    <header>
+
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark blue scrolling-navbar">
+            <a class="navbar-brand animated lightSpeedIn" href="#"><strong>Donde Estudiar</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="@Url.Action("","Home")">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> ¿Qué quiero estudiar? </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Preguntas","Home")">¿Dónde estudio? </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav nav-flex-icons">
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="fa fa-instagram"></i></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item waves-effect waves-light" href="#">Action</a>
+                            <a class="dropdown-item waves-effect waves-light" href="#">Another action</a>
+                            <a class="dropdown-item waves-effect waves-light" href="#">Something else here</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+
+    @RenderBody()
+
+
+    <footer id="footer" class="page-footer pt-4 mt-4" style="background: #2d4a61;">
+
+        <!--Footer Links-->
+        <div class="container-fluid text-center text-md-left">
+            <div class="row wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
+                <!--First column-->
+                <div class="col-md-3">
+                    <p class="column-title white-text"><strong>USEFUL LINKS</strong></p>
+                    <ul class="list-unstyled">
+                        <li><a id="footer-link-faq" href="https://mdbootstrap.com/faq/">Frequently Asked Questions</a></li>
+                        <li><a id="footer-link-browsers" href="https://mdbootstrap.com/browsers-and-devices/">Browsers and devices</a></li>
+                        <li><a id="footer-link-affiliate" href="https://mdbootstrap.com/mdb-affiliate-program/">MDB Affiliate Program</a></li>
+                        <li><a id="footer-link-students" href="https://mdbootstrap.com/mdb-academy/">Students and universities</a></li>
+                        <li><a id="footer-link-sponsorship" href="https://mdbootstrap.com/mdb-sponsorship/">Sponsorship</a></li>
+                        <li><a id="footer-link-team" href="https://mdbootstrap.com/our-team/">Our Team</a></li>
+                    </ul>
+                </div>
+                <!--/.First column-->
+                <hr class="w-100 clearfix d-md-none">
+                <!--Second column-->
+                <div class="col-md-3">
+                    <p class="column-title white-text"><strong>IMPORTANT PAGES</strong></p>
+                    <ul class="list-unstyled">
+                        <li><a id="footer-link-license" href="https://mdbootstrap.com/license/">License</a></li>
+                        <li><a id="footer-link-changelog" href="https://mdbootstrap.com/changelog/">ChangeLog</a></li>
+                        <li><a id="footer-link-policy" href="https://mdbootstrap.com/privacy-policy/">Privacy Policy</a></li>
+                        <li><a id="footer-link-refund" href="https://mdbootstrap.com/return-refund-policy/">Return/Refund policy</a></li>
+                        <li><a id="footer-link-contact" href="https://mdbootstrap.com/contact/">Contact</a></li>
+                        <li><a id="footer-link-press" href="https://mdbootstrap.com/mdbootstrap-press-pack/">Press Pack</a></li>
+                    </ul>
+                </div>
+                <!--/.Second column-->
+                <hr class="w-100 clearfix d-md-none">
+                <!--Third column-->
+                <div class="col-md-3">
+                    <p class="column-title white-text"><strong>DOCUMENTATION</strong></p>
+                    <ul class="list-unstyled">
+                        <li><a id="footer-link-css" href="https://mdbootstrap.com/css/">CSS</a></li>
+                        <li><a id="footer-link-components" href="https://mdbootstrap.com/components/">Components</a></li>
+                        <li><a id="footer-link-javascript" href="https://mdbootstrap.com/javascript/">JavaScript</a></li>
+                        <li><a id="footer-link-sections" href="https://mdbootstrap.com/sections/">Sections</a></li>
+                        <li><a id="footer-link-freebies" href="https://mdbootstrap.com/freebies/">Freebies</a></li>
+                        <li><a id="footer-link-templates" href="https://mdbootstrap.com/templates/">Templates</a></li>
+                    </ul>
+
+                </div>
+                <!--/.Third column-->
+                <hr class="w-100 clearfix d-md-none">
+                <!--Fourth column-->
+                <div class="col-md-3 mb-1">
+                    <p class="column-title white-text"><strong>TUTORIALS</strong></p>
+                    <ul class="list-unstyled">
+                        <li><a id="footer-link-bootstrap" href="https://mdbootstrap.com/bootstrap-tutorial/">MDB with Bootstrap</a></li>
+                        <li><a id="footer-link-wordpress" href="https://mdbootstrap.com/wordpress-tutorial/">MDB with WordPress</a></li>
+                        <li><a id="footer-link-flexbox" href="https://mdbootstrap.com/automated-app-start/">Automation</a></li>
+                        <li><a id="footer-link-migration" href="https://mdbootstrap.com/web-push-start/">Web Push</a></li>
+                        <li><a id="footer-link-migration" href="https://mdbootstrap.com/bootstrap-gulp-tutorial/">Customization</a></li>
+                        <li><a id="footer-link-migration" href="https://mdbootstrap.com/angular/tutorial/angular-tutorial/">Angular</a></li>
+                    </ul>
+                </div>
+                <!--/.Fourth column-->
+
+            </div>
+        </div>
+        <!--/.Footer Links-->
+        <hr>
+        <!--Call to action-->
+        <div class="text-center py-3 wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
+            <ul class="list-unstyled">
+                <li>
+                </li>
+                <li>
+                    <a id="footer-button-download" href="https://mdbootstrap.com/getting-started/" class="btn btn-info waves-effect waves-light">
+                        <fa class="fa fa-download left"></fa> Download for free
+                    </a>
+                    <a id="footer-button-newsletter" href="https://mdbootstrap.com/newsletter/" class="btn blue-gradient waves-effect waves-light">
+                        <fa class="fa fa-newspaper-o left"></fa> Subscribe to our newsletter
+                    </a>
+                    <a id="footer-button-support" href="https://mdbootstrap.com/forums/forum/support/" class="btn btn-indigo waves-effect waves-light">
+                        <fa class="fa fa-comments-o left"></fa> Support
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--/.Call to action-->
+        <hr>
+        <!--Social buttons-->
+        <div class="text-center mb-3 wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
+            <a id="footer-social-facebook" target="_blank" href="https://www.facebook.com/mdbootstrap" class="btn-floating btn-social-all  waves-effect waves-light"><i class="fa fa-facebook left"></i></a>
+            <a id="footer-social-twitter" target="_blank" href="https://twitter.com/MDBootstrap" class="btn-floating btn-social-all  waves-effect waves-light"><i class="fa fa-twitter left"></i></a>
+            <a id="footer-social-youtube" target="_blank" href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" class="btn-floating btn-social-all  waves-effect waves-light"><i class="fa fa-youtube left"></i></a>
+            <a id="footer-social-gplus" target="_blank" href="https://plus.google.com/u/0/b/107863090883699620484/+Mdbootstrap/posts" class="btn-floating btn-social-all  waves-effect waves-light"><i class="fa fa-google-plus left"></i></a>
+            <a id="footer-social-linkedin" target="_blank" href="https://www.linkedin.com/company/10912052" class="btn-floating btn-social-all  waves-effect waves-light"><i class="fa fa-linkedin left"></i></a>
+            <a id="footer-social-dribble" target="_blank" href="https://dribbble.com/mdbootstrap" class="btn-floating btn-social-all  waves-effect waves-light"><i class="fa fa-dribbble left"></i></a>
+            <a id="footer-social-pinterest" target="_blank" href="https://pinterest.com/mdbootstrap/" class="btn-floating btn-social-all  waves-effect waves-light"><i class="fa fa-pinterest left"></i></a>
+            <a id="footer-social-codepen" target="_blank" href="http://codepen.io/mdbootstrap/" class="btn-floating btn-social-all  waves-effect waves-light"><i class="fa fa-codepen left"></i></a>
+            <a id="footer-social-github" target="_blank" href="https://github.com/mdbootstrap/bootstrap-material-design" class="btn btn-floating btn-social-all  waves-effect waves-light"><i class="fa fa-github left"></i></a>
+        </div>
+        <!--/.Social buttons-->
+        <!--Copyright-->
+        <div class="footer-copyright wow fadeIn py-3 text-center" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
+            <div class="container-fluid">
+                ©
+                2018 Copyright: <a href="https://mdbootstrap.com"> MDBootstrap.com </a>
+            </div>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!-- /Start your project here-->
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="~/Assets/js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="~/Assets/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="~/Assets/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="~/Assets/js/mdb.min.js"></script>
+
+</body>
+
+</html>

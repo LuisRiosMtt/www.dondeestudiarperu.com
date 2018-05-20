@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4c3ae46532374f70b960fdf13144a872" Name="Diagram1">
+        <EntityTypeShape EntityType="bd_dondeestudiarModel.det_sede_carrera" Width="1.5" PointX="7.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_areas" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_carreras" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_cursos" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_generales" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_instituciones" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_perfil_profesional" Width="1.5" PointX="5.25" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_roles" Width="1.5" PointX="2.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_sedes" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_ubigueos" Width="1.5" PointX="3" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_usuarios" Width="1.5" PointX="5" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__det_sede___id_ca__03F0984C" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__det_sede___id_se__04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_carrer__id_ar__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_carrer__tipo___59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_perfil__id_ca__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_instit__tipo___68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_instit__tipo___693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_sedes__id_ins__7F2BE32F" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_usuari__id_ro__0C85DE4D" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_sedes__cod_ub__00200768" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_dondeestudiarModel.tb_det_carrera_curso" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
