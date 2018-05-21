@@ -18,6 +18,7 @@ namespace DondeEstudiar.Models
         public string ape_user { get; set; }
         public string usuario { get; set; }
         public string clave { get; set; }
+        public string ruta_foto { get; set; }
         public string foto { get; set; }
         public byte id_rol { get; set; }
         public Nullable<bool> estado { get; set; }

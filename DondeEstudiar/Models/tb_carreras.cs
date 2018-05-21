@@ -29,6 +29,8 @@ namespace DondeEstudiar.Models
         public byte duracion { get; set; }
         public Nullable<short> popularidad { get; set; }
         public Nullable<decimal> remuneracion_prom { get; set; }
+        public string ruta_img { get; set; }
+        public string img_carrera { get; set; }
         public bool estado { get; set; }
         public System.DateTime fec_reg { get; set; }
     

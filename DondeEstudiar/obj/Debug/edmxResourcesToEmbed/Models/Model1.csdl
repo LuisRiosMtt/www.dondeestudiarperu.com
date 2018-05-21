@@ -10,8 +10,8 @@
     <Property Name="acreditado" Type="Boolean" />
     <Property Name="costo_anual" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="rel_ingresantes_postulantes" Type="Byte" />
-    <NavigationProperty Name="tb_carreras" Relationship="Self.FK__det_sede___id_ca__03F0984C" FromRole="det_sede_carrera" ToRole="tb_carreras" />
-    <NavigationProperty Name="tb_sedes" Relationship="Self.FK__det_sede___id_se__04E4BC85" FromRole="det_sede_carrera" ToRole="tb_sedes" />
+    <NavigationProperty Name="tb_carreras" Relationship="Self.FK__det_sede___id_ca__72C60C4A" FromRole="det_sede_carrera" ToRole="tb_carreras" />
+    <NavigationProperty Name="tb_sedes" Relationship="Self.FK__det_sede___id_se__73BA3083" FromRole="det_sede_carrera" ToRole="tb_sedes" />
   </EntityType>
   <EntityType Name="tb_areas">
     <Key>
@@ -21,7 +21,7 @@
     <Property Name="desc_area" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="estado" Type="Boolean" Nullable="false" />
     <Property Name="fec_reg" Type="DateTime" Nullable="false" Precision="0" />
-    <NavigationProperty Name="tb_carreras" Relationship="Self.FK__tb_carrer__id_ar__59063A47" FromRole="tb_areas" ToRole="tb_carreras" />
+    <NavigationProperty Name="tb_carreras" Relationship="Self.FK__tb_carrer__id_ar__5535A963" FromRole="tb_areas" ToRole="tb_carreras" />
   </EntityType>
   <EntityType Name="tb_carreras">
     <Key>
@@ -34,12 +34,14 @@
     <Property Name="duracion" Type="Byte" Nullable="false" />
     <Property Name="popularidad" Type="Int16" />
     <Property Name="remuneracion_prom" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="ruta_img" Type="String" MaxLength="220" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="img_carrera" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="estado" Type="Boolean" Nullable="false" />
     <Property Name="fec_reg" Type="DateTime" Nullable="false" Precision="0" />
-    <NavigationProperty Name="det_sede_carrera" Relationship="Self.FK__det_sede___id_ca__03F0984C" FromRole="tb_carreras" ToRole="det_sede_carrera" />
-    <NavigationProperty Name="tb_areas" Relationship="Self.FK__tb_carrer__id_ar__59063A47" FromRole="tb_carreras" ToRole="tb_areas" />
-    <NavigationProperty Name="tb_generales" Relationship="Self.FK__tb_carrer__tipo___59FA5E80" FromRole="tb_carreras" ToRole="tb_generales" />
-    <NavigationProperty Name="tb_perfil_profesional" Relationship="Self.FK__tb_perfil__id_ca__619B8048" FromRole="tb_carreras" ToRole="tb_perfil_profesional" />
+    <NavigationProperty Name="det_sede_carrera" Relationship="Self.FK__det_sede___id_ca__72C60C4A" FromRole="tb_carreras" ToRole="det_sede_carrera" />
+    <NavigationProperty Name="tb_areas" Relationship="Self.FK__tb_carrer__id_ar__5535A963" FromRole="tb_carreras" ToRole="tb_areas" />
+    <NavigationProperty Name="tb_generales" Relationship="Self.FK__tb_carrer__tipo___5629CD9C" FromRole="tb_carreras" ToRole="tb_generales" />
+    <NavigationProperty Name="tb_perfil_profesional" Relationship="Self.FK__tb_perfil__id_ca__5FB337D6" FromRole="tb_carreras" ToRole="tb_perfil_profesional" />
     <NavigationProperty Name="tb_cursos" Relationship="Self.tb_det_carrera_curso" FromRole="tb_carreras" ToRole="tb_cursos" />
   </EntityType>
   <EntityType Name="tb_cursos">
@@ -61,9 +63,9 @@
     <Property Name="desc_param" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="estado" Type="Boolean" />
     <Property Name="fec_reg" Type="DateTime" Nullable="false" Precision="0" />
-    <NavigationProperty Name="tb_carreras" Relationship="Self.FK__tb_carrer__tipo___59FA5E80" FromRole="tb_generales" ToRole="tb_carreras" />
-    <NavigationProperty Name="tb_instituciones" Relationship="Self.FK__tb_instit__tipo___68487DD7" FromRole="tb_generales" ToRole="tb_instituciones" />
-    <NavigationProperty Name="tb_instituciones1" Relationship="Self.FK__tb_instit__tipo___693CA210" FromRole="tb_generales" ToRole="tb_instituciones" />
+    <NavigationProperty Name="tb_carreras" Relationship="Self.FK__tb_carrer__tipo___5629CD9C" FromRole="tb_generales" ToRole="tb_carreras" />
+    <NavigationProperty Name="tb_instituciones" Relationship="Self.FK__tb_instit__tipo___628FA481" FromRole="tb_generales" ToRole="tb_instituciones" />
+    <NavigationProperty Name="tb_instituciones1" Relationship="Self.FK__tb_instit__tipo___6383C8BA" FromRole="tb_generales" ToRole="tb_instituciones" />
   </EntityType>
   <EntityType Name="tb_instituciones">
     <Key>
@@ -74,17 +76,18 @@
     <Property Name="nom_institucion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="tipo_institucion" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="tipo_gestion" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="telf_institucion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="telf_institucion" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <Property Name="dir_web" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="reputacion" Type="Int16" Nullable="false" />
+    <Property Name="admisiones_anual" Type="Byte" />
     <Property Name="residencial" Type="Boolean" />
+    <Property Name="ruta_logo" Type="String" MaxLength="220" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="logo" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="estado" Type="Boolean" />
     <Property Name="fec_reg" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="admisiones_anual" Type="Byte" Nullable="false" />
-    <NavigationProperty Name="tb_generales" Relationship="Self.FK__tb_instit__tipo___68487DD7" FromRole="tb_instituciones" ToRole="tb_generales" />
-    <NavigationProperty Name="tb_generales1" Relationship="Self.FK__tb_instit__tipo___693CA210" FromRole="tb_instituciones" ToRole="tb_generales" />
-    <NavigationProperty Name="tb_sedes" Relationship="Self.FK__tb_sedes__id_ins__7F2BE32F" FromRole="tb_instituciones" ToRole="tb_sedes" />
+    <NavigationProperty Name="tb_generales" Relationship="Self.FK__tb_instit__tipo___628FA481" FromRole="tb_instituciones" ToRole="tb_generales" />
+    <NavigationProperty Name="tb_generales1" Relationship="Self.FK__tb_instit__tipo___6383C8BA" FromRole="tb_instituciones" ToRole="tb_generales" />
+    <NavigationProperty Name="tb_sedes" Relationship="Self.FK__tb_sedes__id_ins__6E01572D" FromRole="tb_instituciones" ToRole="tb_sedes" />
   </EntityType>
   <EntityType Name="tb_perfil_profesional">
     <Key>
@@ -95,7 +98,7 @@
     <Property Name="id_perfil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="desc_perfil" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="fec_reg" Type="DateTime" Nullable="false" Precision="0" />
-    <NavigationProperty Name="tb_carreras" Relationship="Self.FK__tb_perfil__id_ca__619B8048" FromRole="tb_perfil_profesional" ToRole="tb_carreras" />
+    <NavigationProperty Name="tb_carreras" Relationship="Self.FK__tb_perfil__id_ca__5FB337D6" FromRole="tb_perfil_profesional" ToRole="tb_carreras" />
   </EntityType>
   <EntityType Name="tb_roles">
     <Key>
@@ -105,7 +108,7 @@
     <Property Name="nom_rol" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="fec_reg" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="estado" Type="Boolean" />
-    <NavigationProperty Name="tb_usuarios" Relationship="Self.FK__tb_usuari__id_ro__0C85DE4D" FromRole="tb_roles" ToRole="tb_usuarios" />
+    <NavigationProperty Name="tb_usuarios" Relationship="Self.FK__tb_usuari__id_ro__7D439ABD" FromRole="tb_roles" ToRole="tb_usuarios" />
   </EntityType>
   <EntityType Name="tb_sedes">
     <Key>
@@ -116,14 +119,14 @@
     <Property Name="nom_sede" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="cod_ubigueo" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="direccion" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="telf" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telf" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="coordenada_x" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="coordenada_y" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="estado" Type="Boolean" Nullable="false" />
     <Property Name="fec_reg" Type="DateTime" Nullable="false" Precision="0" />
-    <NavigationProperty Name="det_sede_carrera" Relationship="Self.FK__det_sede___id_se__04E4BC85" FromRole="tb_sedes" ToRole="det_sede_carrera" />
-    <NavigationProperty Name="tb_instituciones" Relationship="Self.FK__tb_sedes__id_ins__7F2BE32F" FromRole="tb_sedes" ToRole="tb_instituciones" />
-    <NavigationProperty Name="tb_ubigueos" Relationship="Self.FK__tb_sedes__cod_ub__00200768" FromRole="tb_sedes" ToRole="tb_ubigueos" />
+    <NavigationProperty Name="det_sede_carrera" Relationship="Self.FK__det_sede___id_se__73BA3083" FromRole="tb_sedes" ToRole="det_sede_carrera" />
+    <NavigationProperty Name="tb_instituciones" Relationship="Self.FK__tb_sedes__id_ins__6E01572D" FromRole="tb_sedes" ToRole="tb_instituciones" />
+    <NavigationProperty Name="tb_ubigueos" Relationship="Self.FK__tb_sedes__cod_ub__6EF57B66" FromRole="tb_sedes" ToRole="tb_ubigueos" />
   </EntityType>
   <EntityType Name="tb_ubigueos">
     <Key>
@@ -136,7 +139,7 @@
     <Property Name="desc_prov" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="cod_dist" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
     <Property Name="desc_dist" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tb_sedes" Relationship="Self.FK__tb_sedes__cod_ub__00200768" FromRole="tb_ubigueos" ToRole="tb_sedes" />
+    <NavigationProperty Name="tb_sedes" Relationship="Self.FK__tb_sedes__cod_ub__6EF57B66" FromRole="tb_ubigueos" ToRole="tb_sedes" />
   </EntityType>
   <EntityType Name="tb_usuarios">
     <Key>
@@ -147,13 +150,30 @@
     <Property Name="ape_user" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="usuario" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="clave" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="foto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ruta_foto" Type="String" MaxLength="220" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="foto" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="id_rol" Type="Byte" Nullable="false" />
     <Property Name="estado" Type="Boolean" />
     <Property Name="fec_reg" Type="DateTime" Nullable="false" Precision="0" />
-    <NavigationProperty Name="tb_roles" Relationship="Self.FK__tb_usuari__id_ro__0C85DE4D" FromRole="tb_usuarios" ToRole="tb_roles" />
+    <NavigationProperty Name="tb_roles" Relationship="Self.FK__tb_usuari__id_ro__7D439ABD" FromRole="tb_usuarios" ToRole="tb_roles" />
   </EntityType>
-  <Association Name="FK__det_sede___id_ca__03F0984C">
+  <EntityType Name="database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ip_address" />
+      <PropertyRef Name="end_ip_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK__det_sede___id_ca__72C60C4A">
     <End Role="tb_carreras" Type="Self.tb_carreras" Multiplicity="1" />
     <End Role="det_sede_carrera" Type="Self.det_sede_carrera" Multiplicity="*" />
     <ReferentialConstraint>
@@ -165,7 +185,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__det_sede___id_se__04E4BC85">
+  <Association Name="FK__det_sede___id_se__73BA3083">
     <End Role="tb_sedes" Type="Self.tb_sedes" Multiplicity="1" />
     <End Role="det_sede_carrera" Type="Self.det_sede_carrera" Multiplicity="*" />
     <ReferentialConstraint>
@@ -177,7 +197,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_carrer__id_ar__59063A47">
+  <Association Name="FK__tb_carrer__id_ar__5535A963">
     <End Role="tb_areas" Type="Self.tb_areas" Multiplicity="1" />
     <End Role="tb_carreras" Type="Self.tb_carreras" Multiplicity="*" />
     <ReferentialConstraint>
@@ -189,7 +209,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_carrer__tipo___59FA5E80">
+  <Association Name="FK__tb_carrer__tipo___5629CD9C">
     <End Role="tb_generales" Type="Self.tb_generales" Multiplicity="1" />
     <End Role="tb_carreras" Type="Self.tb_carreras" Multiplicity="*" />
     <ReferentialConstraint>
@@ -201,7 +221,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_perfil__id_ca__619B8048">
+  <Association Name="FK__tb_perfil__id_ca__5FB337D6">
     <End Role="tb_carreras" Type="Self.tb_carreras" Multiplicity="1" />
     <End Role="tb_perfil_profesional" Type="Self.tb_perfil_profesional" Multiplicity="*" />
     <ReferentialConstraint>
@@ -213,7 +233,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_instit__tipo___68487DD7">
+  <Association Name="FK__tb_instit__tipo___628FA481">
     <End Role="tb_generales" Type="Self.tb_generales" Multiplicity="1" />
     <End Role="tb_instituciones" Type="Self.tb_instituciones" Multiplicity="*" />
     <ReferentialConstraint>
@@ -225,7 +245,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_instit__tipo___693CA210">
+  <Association Name="FK__tb_instit__tipo___6383C8BA">
     <End Role="tb_generales" Type="Self.tb_generales" Multiplicity="1" />
     <End Role="tb_instituciones" Type="Self.tb_instituciones" Multiplicity="*" />
     <ReferentialConstraint>
@@ -237,7 +257,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_sedes__id_ins__7F2BE32F">
+  <Association Name="FK__tb_sedes__id_ins__6E01572D">
     <End Role="tb_instituciones" Type="Self.tb_instituciones" Multiplicity="1" />
     <End Role="tb_sedes" Type="Self.tb_sedes" Multiplicity="*" />
     <ReferentialConstraint>
@@ -249,7 +269,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_usuari__id_ro__0C85DE4D">
+  <Association Name="FK__tb_usuari__id_ro__7D439ABD">
     <End Role="tb_roles" Type="Self.tb_roles" Multiplicity="1" />
     <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="*" />
     <ReferentialConstraint>
@@ -261,7 +281,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_sedes__cod_ub__00200768">
+  <Association Name="FK__tb_sedes__cod_ub__6EF57B66">
     <End Role="tb_ubigueos" Type="Self.tb_ubigueos" Multiplicity="1" />
     <End Role="tb_sedes" Type="Self.tb_sedes" Multiplicity="*" />
     <ReferentialConstraint>
@@ -289,43 +309,44 @@
     <EntitySet Name="tb_sedes" EntityType="Self.tb_sedes" />
     <EntitySet Name="tb_ubigueos" EntityType="Self.tb_ubigueos" />
     <EntitySet Name="tb_usuarios" EntityType="Self.tb_usuarios" />
-    <AssociationSet Name="FK__det_sede___id_ca__03F0984C" Association="Self.FK__det_sede___id_ca__03F0984C">
+    <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+    <AssociationSet Name="FK__det_sede___id_ca__72C60C4A" Association="Self.FK__det_sede___id_ca__72C60C4A">
       <End Role="tb_carreras" EntitySet="tb_carreras" />
       <End Role="det_sede_carrera" EntitySet="det_sede_carrera" />
     </AssociationSet>
-    <AssociationSet Name="FK__det_sede___id_se__04E4BC85" Association="Self.FK__det_sede___id_se__04E4BC85">
+    <AssociationSet Name="FK__det_sede___id_se__73BA3083" Association="Self.FK__det_sede___id_se__73BA3083">
       <End Role="tb_sedes" EntitySet="tb_sedes" />
       <End Role="det_sede_carrera" EntitySet="det_sede_carrera" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_carrer__id_ar__59063A47" Association="Self.FK__tb_carrer__id_ar__59063A47">
+    <AssociationSet Name="FK__tb_carrer__id_ar__5535A963" Association="Self.FK__tb_carrer__id_ar__5535A963">
       <End Role="tb_areas" EntitySet="tb_areas" />
       <End Role="tb_carreras" EntitySet="tb_carreras" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_carrer__tipo___59FA5E80" Association="Self.FK__tb_carrer__tipo___59FA5E80">
+    <AssociationSet Name="FK__tb_carrer__tipo___5629CD9C" Association="Self.FK__tb_carrer__tipo___5629CD9C">
       <End Role="tb_generales" EntitySet="tb_generales" />
       <End Role="tb_carreras" EntitySet="tb_carreras" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_perfil__id_ca__619B8048" Association="Self.FK__tb_perfil__id_ca__619B8048">
+    <AssociationSet Name="FK__tb_perfil__id_ca__5FB337D6" Association="Self.FK__tb_perfil__id_ca__5FB337D6">
       <End Role="tb_carreras" EntitySet="tb_carreras" />
       <End Role="tb_perfil_profesional" EntitySet="tb_perfil_profesional" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_instit__tipo___68487DD7" Association="Self.FK__tb_instit__tipo___68487DD7">
+    <AssociationSet Name="FK__tb_instit__tipo___628FA481" Association="Self.FK__tb_instit__tipo___628FA481">
       <End Role="tb_generales" EntitySet="tb_generales" />
       <End Role="tb_instituciones" EntitySet="tb_instituciones" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_instit__tipo___693CA210" Association="Self.FK__tb_instit__tipo___693CA210">
+    <AssociationSet Name="FK__tb_instit__tipo___6383C8BA" Association="Self.FK__tb_instit__tipo___6383C8BA">
       <End Role="tb_generales" EntitySet="tb_generales" />
       <End Role="tb_instituciones" EntitySet="tb_instituciones" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_sedes__id_ins__7F2BE32F" Association="Self.FK__tb_sedes__id_ins__7F2BE32F">
+    <AssociationSet Name="FK__tb_sedes__id_ins__6E01572D" Association="Self.FK__tb_sedes__id_ins__6E01572D">
       <End Role="tb_instituciones" EntitySet="tb_instituciones" />
       <End Role="tb_sedes" EntitySet="tb_sedes" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_usuari__id_ro__0C85DE4D" Association="Self.FK__tb_usuari__id_ro__0C85DE4D">
+    <AssociationSet Name="FK__tb_usuari__id_ro__7D439ABD" Association="Self.FK__tb_usuari__id_ro__7D439ABD">
       <End Role="tb_roles" EntitySet="tb_roles" />
       <End Role="tb_usuarios" EntitySet="tb_usuarios" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_sedes__cod_ub__00200768" Association="Self.FK__tb_sedes__cod_ub__00200768">
+    <AssociationSet Name="FK__tb_sedes__cod_ub__6EF57B66" Association="Self.FK__tb_sedes__cod_ub__6EF57B66">
       <End Role="tb_ubigueos" EntitySet="tb_ubigueos" />
       <End Role="tb_sedes" EntitySet="tb_sedes" />
     </AssociationSet>
@@ -333,6 +354,18 @@
       <End Role="tb_carreras" EntitySet="tb_carreras" />
       <End Role="tb_cursos" EntitySet="tb_cursos" />
     </AssociationSet>
+    <FunctionImport Name="sp_disabledInstitucion">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_disabledSede">
+      <Parameter Name="id" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="sp_enabledInstitucion">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_enabledSede">
+      <Parameter Name="id" Mode="In" Type="Byte" />
+    </FunctionImport>
     <FunctionImport Name="sp_login" ReturnType="Collection(bd_dondeestudiarModel.sp_login_Result)">
       <Parameter Name="Usuario" Mode="In" Type="String" />
       <Parameter Name="Clave" Mode="In" Type="String" />
@@ -347,7 +380,8 @@
     <Property Type="String" Name="ape_user" Nullable="false" MaxLength="80" />
     <Property Type="String" Name="usuario" Nullable="false" MaxLength="8" />
     <Property Type="String" Name="clave" Nullable="false" MaxLength="80" />
-    <Property Type="String" Name="foto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ruta_foto" Nullable="false" MaxLength="220" />
+    <Property Type="String" Name="foto" Nullable="false" MaxLength="120" />
     <Property Type="Byte" Name="id_rol" Nullable="false" />
     <Property Type="Boolean" Name="estado" Nullable="true" />
     <Property Type="DateTime" Name="fec_reg" Nullable="false" />

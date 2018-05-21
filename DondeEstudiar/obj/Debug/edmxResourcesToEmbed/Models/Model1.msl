@@ -32,6 +32,8 @@
           <ScalarProperty Name="duracion" ColumnName="duracion" />
           <ScalarProperty Name="popularidad" ColumnName="popularidad" />
           <ScalarProperty Name="remuneracion_prom" ColumnName="remuneracion_prom" />
+          <ScalarProperty Name="ruta_img" ColumnName="ruta_img" />
+          <ScalarProperty Name="img_carrera" ColumnName="img_carrera" />
           <ScalarProperty Name="estado" ColumnName="estado" />
           <ScalarProperty Name="fec_reg" ColumnName="fec_reg" />
         </MappingFragment>
@@ -69,11 +71,12 @@
           <ScalarProperty Name="telf_institucion" ColumnName="telf_institucion" />
           <ScalarProperty Name="dir_web" ColumnName="dir_web" />
           <ScalarProperty Name="reputacion" ColumnName="reputacion" />
+          <ScalarProperty Name="admisiones_anual" ColumnName="admisiones_anual" />
           <ScalarProperty Name="residencial" ColumnName="residencial" />
+          <ScalarProperty Name="ruta_logo" ColumnName="ruta_logo" />
           <ScalarProperty Name="logo" ColumnName="logo" />
           <ScalarProperty Name="estado" ColumnName="estado" />
           <ScalarProperty Name="fec_reg" ColumnName="fec_reg" />
-          <ScalarProperty Name="admisiones_anual" ColumnName="admisiones_anual" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -134,10 +137,23 @@
           <ScalarProperty Name="ape_user" ColumnName="ape_user" />
           <ScalarProperty Name="usuario" ColumnName="usuario" />
           <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="ruta_foto" ColumnName="ruta_foto" />
           <ScalarProperty Name="foto" ColumnName="foto" />
           <ScalarProperty Name="id_rol" ColumnName="id_rol" />
           <ScalarProperty Name="estado" ColumnName="estado" />
           <ScalarProperty Name="fec_reg" ColumnName="fec_reg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="database_firewall_rules">
+      <EntityTypeMapping TypeName="bd_dondeestudiarModel.database_firewall_rules">
+        <MappingFragment StoreEntitySet="database_firewall_rules">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+          <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="modify_date" ColumnName="modify_date" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -149,6 +165,10 @@
         <ScalarProperty Name="id_curso" ColumnName="id_curso" />
       </EndProperty>
     </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="sp_disabledInstitucion" FunctionName="bd_dondeestudiarModel.Store.sp_disabledInstitucion" />
+    <FunctionImportMapping FunctionImportName="sp_disabledSede" FunctionName="bd_dondeestudiarModel.Store.sp_disabledSede" />
+    <FunctionImportMapping FunctionImportName="sp_enabledInstitucion" FunctionName="bd_dondeestudiarModel.Store.sp_enabledInstitucion" />
+    <FunctionImportMapping FunctionImportName="sp_enabledSede" FunctionName="bd_dondeestudiarModel.Store.sp_enabledSede" />
     <FunctionImportMapping FunctionImportName="sp_login" FunctionName="bd_dondeestudiarModel.Store.sp_login">
       <ResultMapping>
         <ComplexTypeMapping TypeName="bd_dondeestudiarModel.sp_login_Result">
@@ -157,6 +177,7 @@
           <ScalarProperty Name="ape_user" ColumnName="ape_user" />
           <ScalarProperty Name="usuario" ColumnName="usuario" />
           <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="ruta_foto" ColumnName="ruta_foto" />
           <ScalarProperty Name="foto" ColumnName="foto" />
           <ScalarProperty Name="id_rol" ColumnName="id_rol" />
           <ScalarProperty Name="estado" ColumnName="estado" />

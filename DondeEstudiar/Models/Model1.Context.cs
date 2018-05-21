@@ -38,6 +38,43 @@ namespace DondeEstudiar.Models
         public virtual DbSet<tb_sedes> tb_sedes { get; set; }
         public virtual DbSet<tb_ubigueos> tb_ubigueos { get; set; }
         public virtual DbSet<tb_usuarios> tb_usuarios { get; set; }
+        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
+    
+        public virtual int sp_disabledInstitucion(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_disabledInstitucion", idParameter);
+        }
+    
+        public virtual int sp_disabledSede(Nullable<byte> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_disabledSede", idParameter);
+        }
+    
+        public virtual int sp_enabledInstitucion(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_enabledInstitucion", idParameter);
+        }
+    
+        public virtual int sp_enabledSede(Nullable<byte> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_enabledSede", idParameter);
+        }
     
         public virtual ObjectResult<sp_login_Result> sp_login(string usuario, string clave)
         {

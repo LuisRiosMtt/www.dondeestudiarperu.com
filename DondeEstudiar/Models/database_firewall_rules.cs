@@ -12,19 +12,13 @@ namespace DondeEstudiar.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_usuarios
+    public partial class database_firewall_rules
     {
-        public string dni_user { get; set; }
-        public string nom_user { get; set; }
-        public string ape_user { get; set; }
-        public string usuario { get; set; }
-        public string clave { get; set; }
-        public string ruta_foto { get; set; }
-        public string foto { get; set; }
-        public byte id_rol { get; set; }
-        public Nullable<bool> estado { get; set; }
-        public System.DateTime fec_reg { get; set; }
-    
-        public virtual tb_roles tb_roles { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string start_ip_address { get; set; }
+        public string end_ip_address { get; set; }
+        public System.DateTime create_date { get; set; }
+        public System.DateTime modify_date { get; set; }
     }
 }

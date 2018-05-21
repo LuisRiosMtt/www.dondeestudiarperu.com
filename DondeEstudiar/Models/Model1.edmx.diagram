@@ -4,28 +4,29 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4c3ae46532374f70b960fdf13144a872" Name="Diagram1">
+      <Diagram DiagramId="da7802428f844392bcb1055f18c52e88" Name="Diagram1">
         <EntityTypeShape EntityType="bd_dondeestudiarModel.det_sede_carrera" Width="1.5" PointX="7.5" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_areas" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_carreras" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_cursos" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_generales" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_areas" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_carreras" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_cursos" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_generales" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_instituciones" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_perfil_profesional" Width="1.5" PointX="5.25" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_perfil_profesional" Width="1.5" PointX="5.25" PointY="16.375" IsExpanded="true" />
         <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_roles" Width="1.5" PointX="2.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_sedes" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_ubigueos" Width="1.5" PointX="3" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_sedes" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_ubigueos" Width="1.5" PointX="3" PointY="17.125" IsExpanded="true" />
         <EntityTypeShape EntityType="bd_dondeestudiarModel.tb_usuarios" Width="1.5" PointX="5" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="bd_dondeestudiarModel.FK__det_sede___id_ca__03F0984C" ManuallyRouted="false" />
-        <AssociationConnector Association="bd_dondeestudiarModel.FK__det_sede___id_se__04E4BC85" ManuallyRouted="false" />
-        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_carrer__id_ar__59063A47" ManuallyRouted="false" />
-        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_carrer__tipo___59FA5E80" ManuallyRouted="false" />
-        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_perfil__id_ca__619B8048" ManuallyRouted="false" />
-        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_instit__tipo___68487DD7" ManuallyRouted="false" />
-        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_instit__tipo___693CA210" ManuallyRouted="false" />
-        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_sedes__id_ins__7F2BE32F" ManuallyRouted="false" />
-        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_usuari__id_ro__0C85DE4D" ManuallyRouted="false" />
-        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_sedes__cod_ub__00200768" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="bd_dondeestudiarModel.database_firewall_rules" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__det_sede___id_ca__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__det_sede___id_se__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_carrer__id_ar__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_carrer__tipo___5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_perfil__id_ca__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_instit__tipo___628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_instit__tipo___6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_sedes__id_ins__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_usuari__id_ro__7D439ABD" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_dondeestudiarModel.FK__tb_sedes__cod_ub__6EF57B66" ManuallyRouted="false" />
         <AssociationConnector Association="bd_dondeestudiarModel.tb_det_carrera_curso" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

@@ -28,11 +28,12 @@ namespace DondeEstudiar.Models
         public string telf_institucion { get; set; }
         public string dir_web { get; set; }
         public short reputacion { get; set; }
+        public Nullable<byte> admisiones_anual { get; set; }
         public Nullable<bool> residencial { get; set; }
+        public string ruta_logo { get; set; }
         public string logo { get; set; }
         public Nullable<bool> estado { get; set; }
         public System.DateTime fec_reg { get; set; }
-        public byte admisiones_anual { get; set; }
     
         public virtual tb_generales tb_generales { get; set; }
         public virtual tb_generales tb_generales1 { get; set; }
