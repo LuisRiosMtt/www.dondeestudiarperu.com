@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<DondeEstudiar.Models.det_sede_carrera>
-
+@*@model DondeEstudiar.Models.BaseModelo*@
 @{
     ViewBag.Title = "Home - Donde Estudiar";
     Layout = "~/Views/Shared/_Layout_Web.cshtml";
@@ -108,7 +108,7 @@
             <h3 class="titulo">Conoce, compara y elige</h3>
         </div>
     </div>
-    <form method="POST" action="@Url.Action("FiltroPreguntas","Home")">
+    <form method="POST" action="@Url.Action("FiltroPreguntas", "Home")">
         <div class="container cont-b">
             <div class="row">
                 <div class="col-md-4" style="margin-bottom: 25px;">
@@ -242,86 +242,80 @@
                     <h4 class="tit-mas animated bounceInRight">Carreras mas destacadas</h4>
                     <div class="form-row">
                         <div class="col-lg-12 col-xs-8 col-sm-8 col-md-8">
-                            <div class="row">
+                          
+                            <div class="row" id="rowCarreras">
 
+                                        @*@foreach (var item in Model.listaDetallesSedeCarrera)
 
-                                @foreach (var item in Model.GroupBy(x => x.tb_carreras.id_carrera).Select(grp => grp.First()))
-
-                                {
-                                    <div class="col-lg-6 col-md-6 mb-4">
-                                        <div class="card card-cascade card-ecommerce narrower">
-
-                                            <!--Card image-->
-                                            <div class="view overlay">
-                                                <img class="card-img-top" src="@item.tb_carreras.ruta_img" alt="">
-                                                <a>
-                                                    <div class="mask rgba-white-slight"></div>
-                                                </a>
-                                            </div>
-                                            <!--/.Card image-->
-                                            <!--Card content-->
-                                            <div class="card-body text-center">
-                                                <!--Category & Title-->
-                                                <h5>@item.tb_carreras.nom_carrera</h5>
-                                                <h4 class="card-title"><strong><a href="">@item.tb_sedes.tb_instituciones.nom_institucion</a></strong></h4>
-
-                                                <!--Description-->
-                                                <p class="card-text" title="Ubicacion/Distrito">
-                                                    <a title="Ubicacion/Distrito" class="px-2 fa-lg li-ic"><i class="fas fa-map-marker-alt"></i></a>
-                                                    @item.tb_sedes.tb_ubigueos.desc_dep , @item.tb_sedes.tb_ubigueos.desc_dist
-                                                </p>
-
-
-
-
-
-                                                <!--Card footer-->
-                                                <div class="card-footer">
-                                                    <span class="float-left">15 <a class="" data-toggle="tooltip" data-placement="top" title="Quick Look"><i class="fa fa-eye mr-3"></i></a></span>
-                                                    <span class="float-right">
-                                                        10
-                                                        <a class="" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                    </span>
-                                                </div>
-
-                                            </div>
-                                            <!--/.Card content-->
-
-                                        </div>
-                                        <!-- Card Wider -->
-
-
+        {
+                            <div class="col-lg-6 col-md-6 mb-4">
+                                <div class="card card-cascade card-ecommerce narrower">
+                                    <!--Card image-->
+                                    <div class="view overlay">
+                                        <img class="card-img-top" src="@item.tb_carreras.ruta_img" alt="">
+                                        <a>
+                                            <div class="mask rgba-white-slight"></div>
+                                        </a>
                                     </div>
-                                }
+                                    <!--/.Card image-->
+                                    <!--Card content-->
+                                    <div class="card-body text-center">
+                                        <!--Category & Title-->
+                                        <h5>@item.tb_carreras.nom_carrera</h5>
+                                        <h4 class="card-title"><strong><a href="">@item.tb_sedes.tb_instituciones.nom_institucion</a></strong></h4>
+                                        <!--Description-->
+                                        <p class="card-text" title="Ubicacion/Distrito">
+                                            <a title="Ubicacion/Distrito" class="px-2 fa-lg li-ic"><i class="fas fa-map-marker-alt"></i></a>
+                                            @item.tb_sedes.tb_ubigueos.desc_dep , @item.tb_sedes.tb_ubigueos.desc_dist
+                                        </p>
+
+
+                                        <!--Card footer-->
+                                        <div class="card-footer">
+                                            <span class="float-left">15 <a class="" data-toggle="tooltip" data-placement="top" title="Quick Look"><i class="fa fa-eye mr-3"></i></a></span>
+                                            <span class="float-right">
+                                                10
+                                                <a class="" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!--/.Card content-->
+                                </div>
+                                <!-- Card Wider -->
 
                             </div>
+        }*@
+                                    </div>
                         </div>
-                        <div class="pagination-cs">
-                            <ul class="pagination pg-blue">
-                                <!--Arrow left-->
-                                <li class="page-item">
-                                    <a class="page-link" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
+                        @*<div class="pagination-cs">
+            <ul class="pagination pg-blue">
+                <!--Arrow left-->
+                <li class="page-item">
+                    <a class="page-link" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
 
-                                <!--Numbers-->
-                                <li class="page-item active"><a class="page-link">1</a></li>
-                                <li class="page-item"><a class="page-link">2</a></li>
-                                <li class="page-item"><a class="page-link">3</a></li>
-                                <li class="page-item"><a class="page-link">4</a></li>
-                                <li class="page-item"><a class="page-link">5</a></li>
+                <!--Numbers-->
+                <li class="page-item active"><a class="page-link">1</a></li>
+                <li class="page-item"><a class="page-link">2</a></li>
+                <li class="page-item"><a class="page-link">3</a></li>
+                <li class="page-item"><a class="page-link">4</a></li>
+                <li class="page-item"><a class="page-link">5</a></li>
 
-                                <!--Arrow right-->
-                                <li class="page-item">
-                                    <a class="page-link" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </li>
-                            </ul>
+                <!--Arrow right-->
+                <li class="page-item">
+                    <a class="page-link" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </div>*@
+                        <div id="paginadorIndex">
                         </div>
+                        @*@{Html.RenderPartial("Paginador",Model);}*@
                     </div>
                 </div>
                 <div class="col-lg-4 col-xs-4 col-sm-4 col-md-4">
@@ -380,6 +374,10 @@
 
 <script>
     /*AutoComplete Ajax,Jquery*/ /*Carrera*/
+    $(document).ready(function () {
+        $("#paginadorIndex").load('@Url.Action("Paginador", "Home")');
+        $("#rowCarreras").load('@Url.Action("IndexCards", "Home")');
+    });
     $("#carrera").autocomplete({
         source: function (request, response) {
             $.ajax({

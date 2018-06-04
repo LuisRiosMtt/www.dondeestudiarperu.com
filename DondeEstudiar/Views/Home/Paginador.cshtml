@@ -1,0 +1,87 @@
+﻿@model DondeEstudiar.Models.BaseModelo
+@{
+    var cantidadPaginas = (int)Math.Ceiling((double)Model.TotalDeRegistros / Model.RegistrosPorPagina);
+}
+
+@{
+    int Inicial = 1;
+    var radio = 3;
+    var cantidadMaximaDePaginas = radio * 2 + 1;
+    int Final = (cantidadPaginas > cantidadMaximaDePaginas) ? cantidadMaximaDePaginas : cantidadPaginas;
+    if (Model.PaginaActual > radio + 1)
+    {
+        Inicial = Model.PaginaActual - radio;
+        if (cantidadPaginas > Model.PaginaActual + radio)
+        {
+            Final = Model.PaginaActual + radio;
+        }
+        else
+        {
+            Final = cantidadPaginas;
+        }
+    }
+}
+
+<div class="pagination-cs">
+    <ul class="pagination pg-blue">
+
+        <li class="page-item" onclick="paginar(this,1)">
+            <a class="page-link">Primera</a>
+
+        </li>
+        @for (int i = Inicial; i <= Final; i++)
+        {
+
+            if (i == Model.PaginaActual)
+            {
+                <li class="page-item active" onclick="paginar(this,@i)">
+                    <a class="page-link " >@i.ToString()</a>
+
+                </li>
+            }
+            else
+            {
+                <li class="page-item" onclick="paginar(this,@i)">
+                    <a class="page-link">@i.ToString()</a>
+
+                </li>
+            }
+        }
+
+          <li class="page-item" onclick="paginar(this,@cantidadPaginas)">
+                    <a class="page-link">Ultima</a>
+
+                </li>
+    </ul>
+</div>
+
+<script src="~/Assets/js/jquery-3.2.1.min.js"></script>
+<script src="~/Assets/js/jquery-ui.js"></script>
+<script>
+    function paginar(thi,index) {
+       
+        $(".page-item").removeClass("active");
+        $(thi).addClass("active");
+
+        var data = {pagina:index};
+        $.ajax({
+            type: 'POST',
+            url: '/Home/IndexCards/',
+            data: JSON.stringify(data),
+            contentType: 'application/json',
+            success: function (data) {
+                console.log("success post");
+                $("#rowCarreras").fadeOut(1000, function () {
+                    $(this).css("display", "none");
+                    $(this).html(data);
+                });
+                $("#rowCarreras").fadeIn(500);
+
+            },
+            error: function () {
+                alert("error post");
+            }
+        });
+    }
+
+</script>
